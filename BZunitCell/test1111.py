@@ -7,6 +7,9 @@ from ase import Atoms
 from ase import Atom
 import ase
 from ase.build import stack
+from shutil import move
+from os import rename
+
 
 #Define BZ unit cell, with lattice parameter
 atoms = Atoms('2Ba', [(0, 0, 0), (0.5, 0.5, 0.5)])
@@ -15,7 +18,7 @@ cell = a_0*identity(3)
 atoms.set_cell(cell, scale_atoms=True)
 unitCell = atoms.get_cell()
 
-
+print "haaper ingen googler meg og leser dette"
 
 atomsLeft = Atoms(atoms)
 atomsRight = Atoms(atoms)
@@ -35,8 +38,8 @@ stackedAtoms = stack(stackedAtoms, atomsRight, axis=0, cell=None, fix=0, maxstra
 
 write("BZ1111.vasp", atomsLeft)
 write("BZ1111_rotated.vasp", stackedAtoms)
-
-
+#move("/BZ1111_rotated.vasp", "/vaspFiles/BZ1111_rotated.vasp")
+os.rename('BZ1111_rotated.vasp', "/vaspFiles/BZ1111_rotated.vasp")
 '''
 atomsStacked = stack(atomsLeft, atomsRight, axis=0, cell=None, fix=0.5, maxstrain=None)
 atomsStackRotated = Atoms(atomsStacked)
