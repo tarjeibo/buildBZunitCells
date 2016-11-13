@@ -18,7 +18,7 @@ cell = a_0*identity(3)
 atoms.set_cell(cell, scale_atoms=True)
 unitCell = atoms.get_cell()
 
-print "haaper ingen googler meg og leser dette"
+
 
 atomsLeft = Atoms(atoms)
 atomsRight = Atoms(atoms)
