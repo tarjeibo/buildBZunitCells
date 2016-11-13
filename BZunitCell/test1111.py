@@ -37,7 +37,7 @@ write("BZ1111.vasp", atomsLeft)
 write("BZ1111_rotated.vasp", stackedAtoms)
 
 
-'''
+'''w
 atomsStacked = stack(atomsLeft, atomsRight, axis=0, cell=None, fix=0.5, maxstrain=None)
 atomsStackRotated = Atoms(atomsStacked)
 #Rotation about the center of the unit cell
